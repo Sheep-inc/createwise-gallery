@@ -1,0 +1,43 @@
+#profileImg{
+  max-width: 100%;
+  border-radius:50%;
+}
+.Social_Media_Button a img{
+  max-width: 3em;
+}
+.card{
+  /* width: 22%!important;
+  margin: 0 1% 1% 1% */
+}
+.searchHeader{
+  display: flex;
+}
+#searchbar{
+  width: 100%;
+  border-radius: 1em;
+  margin-right: 50px
+}
+.galleryCard{
+  text-align: center;
+}
+.tableGalerij{
+  margin-left: auto;
+  margin-right: auto;
+  width:50%
+}
+.tableGalerij td, .tableGalerij th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.tableGalerij tr:nth-child(even){background-color: #f2f2f2;}
+
+.tableGalerij tr:hover {background-color: #ddd;}
+
+.tableGalerij th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #88171F;
+  color: white;
+}
