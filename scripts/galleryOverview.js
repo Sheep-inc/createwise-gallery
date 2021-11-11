@@ -136,7 +136,7 @@ class gallery{
 
 
 var galeries =[];
-var url="/wp-admin/admin-ajax.php?action=loadGalleryOverview";
+var url="/wp-admin/admin-ajax.php?action=cw_loadGalleries";
 
 galeries.main=new gallery(document.getElementById("libcards"));
 
