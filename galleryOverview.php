@@ -73,3 +73,9 @@ function cw_loadGalleries(){
   echo json_encode(galleryLibrary($options,$user));
   wp_die();
 }
+
+//
+// add_shortcode('greeting', 'createGalleryShort');
+// function createGalleryShort() {
+//
+// }
