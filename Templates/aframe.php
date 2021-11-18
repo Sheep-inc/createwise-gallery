@@ -25,13 +25,16 @@
     <a-entity id="camera" camera look-controls wasd-controls="acceleration: 100" kinematic-body></a-entity>
   </a-entity>
 
-  <a-box static-body position="-4.1 1.5 -2.5" color="#4CC3D9" width=".5" height="3" depth="8"></a-box>
-  <a-box static-body position="0 1.5 -6.5" color="#4CC3D9" width="8" height="3" depth="0.5"></a-box>
+  <!--<a-box static-body position="-4.1 1.5 -2.5" color="#4CC3D9" width=".5" height="3" depth="8"></a-box>-->
+  <!--<a-box static-body position="0 1.5 -6.5" color="#4CC3D9" width="8" height="3" depth="0.5"></a-box>-->
+  <a-box static-body="" position="-4.1 1.5 -2.5" color="#4CC3D9" width=".5" height="3" depth="8" material="" geometry="" velocity=""></a-box>
+  <a-box static-body="" position="0 1.5 -6.5" color="#4CC3D9" width="8" height="3" depth="0.5" material="" geometry="" velocity=""></a-box>
+
    <a-image position="0 1.5 -6.249" src="#my-image"></a-image>
-  <a-box static-body position="3.75 1.5 -2.8" color="#4CC3D9" width="0.5" height="3" depth="8"></a-box>
+  <a-box static-body position="3.75 1.5 -2.8" color="#4CC3D9" width=".5" height="3" depth="8"></a-box>
   <a-box static-body position="0 1.5 1.2" color="#4CC3D9" width="8" height="3" depth="0.5"></a-box>
   <!-- <a-box dynamic-body position="0 1 -2" color="#4CC3D9" width="1" height="1" depth="1"></a-box> -->
 
-  <a-plane static-body rotation="-90 0 0" position="0 0 -4" width="10" height="10" color="#7BC8A4"></a-plane>
+  <a-plane static-body rotation="-90 0 0" position="0 0 -4" width="20" height="10" color="#7BC8A4"></a-plane>
   <a-sky color="#ECECEC"></a-sky>
 </a-scene>
