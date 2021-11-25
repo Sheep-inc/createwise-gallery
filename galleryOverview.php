@@ -1,13 +1,13 @@
 <?php
-add_action('wp_ajax_loadGalleryOverview', 'cw_loadGalleries'); // for logged in user
-add_action('wp_ajax_nopriv_loadGalleryOverview', 'cw_loadGalleries');
-function
+add_action('wp_ajax_cw_loadGalleries', 'cw_loadGalleries'); // for logged in user
+add_action('wp_ajax_nopriv_cw_loadGalleries', 'cw_loadGalleries');
+
 //loadGalleryOverview
 function galleryLibrary($options=[],$user=null){
   global $wpdb;
   $ordertypes=[
-    " c.Name ASC ",
-    " c.Name DESC "
+    " g.naam ASC ",
+    " g.naam DESC "
   ];
   $cardDefaultOptions=[
     "ordertype"=>0,
@@ -18,6 +18,7 @@ function galleryLibrary($options=[],$user=null){
   foreach($cardDefaultOptions as $key=>$value){
     if(isset($options[$key]) && $options[$key]!==""){
       if($key=="ordertype"){
+        // $options[$key]=
         if($options[$key] >= count($ordertypes)){
           $curOptions[$key]=0;
         }else{
@@ -41,22 +42,24 @@ function galleryLibrary($options=[],$user=null){
   $cards=[];
   $items = $wpdb->get_var($wpdb->prepare(
     "SELECT count(*) from galleries g
-     where hidden=0 AND c.Name like %s ".$whereStr,
+     where prive=0 AND g.naam like %s ".$whereStr,
       $params
   ));
   $params[]=$curOptions["page"];
   // var_dump($params);
   $cards = $wpdb->get_results(
     $wpdb->prepare(
-    "SELECT g.id as ID,g.name as Name from galleries g
-     where private=0 AND g.Name like %s
+      //add username
+    "SELECT g.id as ID,g.naam as Name,u.display_name as user, g.views from galleries g
+    inner join wpox_users u on g.gebruikersID = u.id
+     where prive=0 AND g.naam like %s
      order by ".$ordertypes[$curOptions["ordertype"]]."
      Limit %d ,12",
       $params
     ),
   "ARRAY_A");
 
-  return array("cards"=>$cards,"items"=>$items);
+  return array("cards"=>$cards,"items"=>100);//$items);
 }
 
 function cw_loadGalleries(){
@@ -83,4 +86,4 @@ function cw_loadGalleries(){
 //
 // // Output needs to be return
 // return $message;
-// } 
+// }

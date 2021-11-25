@@ -1,8 +1,4 @@
 <?php
-/**
-*  Plugin Name: Createwise-gallery
-*/
-
 /*
   create tables
 
@@ -27,49 +23,6 @@
 //     where p.post_author=%d",array($user)),"ARRAY_A");
 //   return $art;
 // }
-
-// define('MAX_UPLOAD_SIZE', 200000);
-// define('TYPE_WHITELIST', serialize(array(
-//   'image/jpeg',
-//   'image/png',
-//   'image/gif'
-//   )));
-//
-// function sui_form_shortcode(){
-//
-//   if(!is_user_logged_in()){
-//
-//     return '<p>You need to be logged in to submit an image.</p>';
-//
-//   }
-//   if(isset( $_POST['sui_upload_image_form_submitted'] ) && wp_verify_nonce($_POST['sui_upload_image_form_submitted'], 'sui_upload_image_form') ){
-//
-//   $result = sui_parse_file_errors($_FILES['sui_image_file'], $_POST['sui_image_caption']);
-//
-//   if($result['error']){
-//
-//     echo '<p>ERROR: ' . $result['error'] . '</p>';
-//
-//   }else{
-//
-//     $user_image_data = array(
-//       'post_title' => $result['caption'],
-//       'post_status' => 'pending',
-//       'post_author' => $current_user->ID,
-//       'post_type' => 'user_images'
-//     );
-//
-//     if($post_id = wp_insert_post($user_image_data)){
-//
-//       sui_process_image('sui_image_file', $post_id, $result['caption']);
-//
-//       wp_set_object_terms($post_id, (int)$_POST['sui_image_category'], 'sui_image_category');
-//
-//     }
-//   }
-// }
-// }
-
 
 // function
 
