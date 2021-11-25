@@ -60,3 +60,11 @@ li.numb, li.dots {
   padding: 10px;
   margin: 5xp;
 }
+.magic-desc-box{
+  /* display: none; */
+  display: block;
+  z-index: 9999999;
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+}

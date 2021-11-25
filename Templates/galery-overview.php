@@ -16,9 +16,9 @@
          </div>
          <div class="searchOptions col-sm-4 col-md-2">
            <select name= "order">
-             <option value= "0">a-z</option>
-             <option value= "1">z-a</option>
-             <option value= "2">populairiteit</option>
+             <option>a-z</option>
+             <option>z-a</option>
+             <option>populairiteit</option>
            </select>
          </div>
        </div>
@@ -42,11 +42,7 @@
                <h5 class="card-title"><a href="/users/Sjoerd Janssen">Sjoerd Janssen</a></h5>
              </div>
          </div>
-
      </div>
-     <div class= "pagination"><ul class="mx-auto">
-
-     </ul></div>
   </div>
   <script refer src="/wp-content/themes/createwise-gallery/scripts/galleryOverview.js"></script>
   </body>

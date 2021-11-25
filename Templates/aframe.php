@@ -1,6 +1,16 @@
 <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
 <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+<style>
+.magic-desc-box{
+  /* display: none; */
+  display: block;
+  z-index: 9999999;
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+}
+</style>
 <script>
   // AFRAME.registerComponent('foo', {
   //   init: function() {
@@ -15,6 +25,7 @@
   // })
 
 </script>
+<body>
 <a-scene physics="debug: true">
   <a-assets>
     <img id="my-image" src="https://picsum.photos/400/400">
@@ -27,8 +38,8 @@
   </a-entity>
     <a-box
       static-body=""
-      position="-9.75 1.5 -4"
-      width=".5" height="3" depth="10"
+      position="-9.75 1.5 -2.5"
+      width=".5" height="4" depth="13"
       src="#wall"
       repeat="2 1"
       normal-map="#wall"
@@ -37,8 +48,8 @@
 
     <a-box
       static-body=""
-      position="9.75 1.5 -4"
-      width=".5" height="3" depth="10"
+      position="9.75 1.5 -2.5"
+      width=".5" height="4" depth="13"
       src="#wall"
       repeat="2 1"
       normal-map="#wall"
@@ -51,7 +62,7 @@
     <a-box
       static-body=""
       position="0 1.5 -8.75"
-      width="20" height="3" depth="0.5"
+      width="19" height="4" depth="0.5"
       src="#wall"
       repeat="3 1"
       normal-map="#wall"
@@ -62,7 +73,7 @@
     <a-box
       static-body=""
       position="0 1.5 1.2"
-      width="20" height="3" depth="0.5"
+      width="19" height="4" depth="0.5"
       src="#wall"
       repeat="3 1"
       normal-map="#wall"
@@ -73,7 +84,7 @@
     <a-plane
       static-body=""
       rotation="-90 0 0"
-      position="0 0 -4" width="20" height="10"
+      position="0 0 -2.35" width="20" height="13"
       src="#wall"
       repeat="3 2"
       normal-map="#wall"
@@ -114,3 +125,7 @@
 
   <a-sky src="#sky"></a-sky>
 </a-scene>
+<div class="magic-desc-box">
+  LOOK MOM IM ON TV
+</div>
+</body>
