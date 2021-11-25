@@ -81,17 +81,36 @@
       roughness="0.8"
     ></a-plane>
 
-    <a-image position="4.75 1.5 0.9" src="#my-image"></a-image>
-    <a-image position="-4.75 1.5 0.9" src="#my-image"></a-image>
-    <a-image position="0 1.5 0.9" src="#my-image"></a-image>
-    <a-image position="4.75 1.5 -8.4" src="#my-image"></a-image>
-    <a-image position="0 1.5 -8.4" src="#my-image"></a-image>
-    <a-image position="-4.75 1.5 -8.4" src="#my-image"></a-image>
+    <a-image position="4.75 1.5 0.89" src="#my-image"></a-image>
+    <a-box color="grey" depth="1" height="1" width=".1" position="4.75 1.5 0.95" rotation="0 90 0"></a-box>
 
-    <a-image position="9.4 1.5 -6.25" rotation="0 90 0" src="#my-image"></a-image>
-    <a-image position="9.4 1.5 -0.95" rotation="0 90 0" src="#my-image"></a-image>
-    <a-image position="-9.4 1.5 -6.25" rotation="0 90 0" src="#my-image"></a-image>
-    <a-image position="-9.4 1.5 -0.95" rotation="0 90 0" src="#my-image"></a-image>
+    <a-image position="-4.75 1.5 0.89" src="#my-image"></a-image>
+    <a-box color="grey" depth="1" height="1" width=".1" position="-4.75 1.5 0.95" rotation="0 90 0"></a-box>
+
+    <a-image position="0 1.5 0.89" src="#my-image"></a-image>
+    <a-box color="grey" depth="1" height="1" width=".1" position="0 1.5 0.95" rotation="0 90 0"></a-box>
+
+    <a-image position="4.75 1.5 -8.43" src="#my-image"></a-image>
+    <a-box color="grey" depth="1" height="1" width=".1" position="4.75 1.5 -8.5" rotation="0 90 0"></a-box>
+
+    <a-image position="0 1.5 -8.43" src="#my-image"></a-image>
+    <a-box color="grey" depth="1" height="1" width=".1" position="0 1.5 -8.5" rotation="0 90 0"></a-box>
+
+    <a-image position="-4.75 1.5 -8.43" src="#my-image"></a-image>
+    <a-box color="grey" depth="1" height="1" width=".1" position="-4.75 1.5 -8.5" rotation="0 90 0"></a-box>
+
+    <a-image position="9.44 1.5 -6.25" rotation="0 90 0" src="#my-image" ></a-image>
+    <a-box color="grey" depth="1" height="1" width=".1" position="9.5 1.5 -6.25"></a-box>
+
+    <a-image position="9.44 1.5 -0.95" rotation="0 90 0" src="#my-image" ></a-image>
+    <a-box color="grey" depth="1" height="1" width=".1" position="9.5 1.5 -0.95"></a-box>
+
+    <a-image position="-9.44 1.5 -6.25" rotation="0 90 0" src="#my-image" ></a-image>
+    <a-box color="grey" depth="1" height="1" width=".1" position="-9.5 1.5 -6.25"></a-box>
+
+    <a-image position="-9.44 1.5 -0.95" rotation="0 90 0" src="#my-image" ></a-image>
+    <a-box color="grey" depth="1" height="1" width=".1" position="-9.5 1.5 -0.95"></a-box>
+
 
   <a-sky src="#sky"></a-sky>
 </a-scene>
