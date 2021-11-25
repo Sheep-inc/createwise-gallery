@@ -41,3 +41,22 @@
   background-color: #88171F;
   color: white;
 }
+/* start pagination styling */
+.pagination ul{
+  display: flex;
+}
+
+.pagination li{
+  list-style: none;
+  background-color: #88171F;
+  border-radius: 1em;
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
+  color: white;
+}
+
+li.numb, li.dots {
+  padding: 10px;
+  margin: 5xp;
+}

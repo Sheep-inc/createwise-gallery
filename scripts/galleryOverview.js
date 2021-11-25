@@ -12,7 +12,7 @@ class gallery{
         this.config.user=elem.dataset.user??0;
         this.wrapper=elem;
         var search= elem.previousElementSibling;
-        this.inputs["search"]=search.querySelector(".searchInput")
+        this.inputs["search"]=search.querySelector("#searchbar")
         this.inputs["orderSelec"]=search.querySelector("select[name='order']")
         this.pagination=elem.nextElementSibling
         var that = this;
@@ -27,13 +27,25 @@ class gallery{
         var html="";
         var cards= json.cards??json;
         cards.forEach(item=>{
-            html+=`<div class="card tcg" data-id='${item.ID}'>
-            <a href="/card-info/?id=${item.ID}"><img class="card-img-top" src="${item.url}" alt="${item.Name}"></a>`;
-            html+=(item.quantity &&Number(item.quantity)>1)?'<span class="sc-card-badge">'+item.quantity+'</span>':"";
-            html+=`<div class="card-body">
-              <p class="card-title text-center">${item.Name.replaceAll("\\","")}</p>
-            </div>
-          </div>`;
+
+          html+=`<div class="card galleryCard col-md-4 col-sm-12">
+            <a href="/galeries/${item.ID}">
+              ${item.Name}:<br>
+              <img src="${item.url}" class="card-img-top" alt="${item.Name}">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title"><a href="/users/${item.user}">${item.user}</a></h5>
+              </div>
+          </div>`
+
+          //   html+=`<div class="card tcg" data-id='${item.ID}'>
+          //   <a href="/galleries/?id=${item.ID}"><img class="card-img-top" src="${item.url}" alt="${item.Name}"></a>`;
+          //   html+='<span class="sc-card-badge">'+item.views+'</span>';
+          //   html+=`<div class="card-body">
+          //     <p class="card-title text-center">${item.Name.replaceAll("\\","")}</p>
+          //   </div>
+          // </div>`;
+        
         })
         html=html==""?"no galleries found":html
         return html;
@@ -138,8 +150,8 @@ class gallery{
 var galeries =[];
 var url="/wp-admin/admin-ajax.php?action=cw_loadGalleries";
 
-galeries.main=new gallery(document.getElementById("libcards"));
+galeries.main=new gallery(document.getElementById("galleryHolder"));
 
-document.querySelector(".AdvancedOptionsToggle span").addEventListener("click",e=>{
-    $(".galleryOptions.row").slideToggle();
-})
+// document.querySelector(".AdvancedOptionsToggle span").addEventListener("click",e=>{
+//     $(".galleryOptions.row").slideToggle();
+// })
