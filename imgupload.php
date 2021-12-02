@@ -17,14 +17,9 @@ define('TYPE_WHITELIST', serialize(array(
   )));
 
 
-add_shortcode('upload_form_code', 'sui_form_shortcode');
+// add_shortcode('upload_form_code', 'sui_form_shortcode');
 
 function sui_form_shortcode(){
-
-  echo getImageCanvasSize(500,300)." 500h x 300w <br>";
-  echo getImageCanvasSize(300,500)." 300h x 500w <br>";
-}
-function sui_form_shortcodee(){
 
   if(!is_user_logged_in()){
 

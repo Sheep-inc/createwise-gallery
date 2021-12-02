@@ -1,7 +1,6 @@
 <?php
 add_action('wp_ajax_cw_loadGalleries', 'cw_loadGalleries'); // for logged in user
 add_action('wp_ajax_nopriv_cw_loadGalleries', 'cw_loadGalleries');
-
 //loadGalleryOverview
 function galleryLibrary($options=[],$user=null){
   global $wpdb;
@@ -18,7 +17,7 @@ function galleryLibrary($options=[],$user=null){
   foreach($cardDefaultOptions as $key=>$value){
     if(isset($options[$key]) && $options[$key]!==""){
       if($key=="ordertype"){
-        // $options[$key]=
+        $options[$key]= (int)$options[$key];
         if($options[$key] >= count($ordertypes)){
           $curOptions[$key]=0;
         }else{
@@ -49,9 +48,8 @@ function galleryLibrary($options=[],$user=null){
   // var_dump($params);
   $cards = $wpdb->get_results(
     $wpdb->prepare(
-      //add username
-    "SELECT g.id as ID,g.naam as Name,u.display_name as user, g.views from galleries g
-    inner join wpox_users u on g.gebruikersID = u.id
+    "SELECT g.id as ID,g.naam as Name,u.display_name as user from galleries g
+    inner join wpox_users u on u.id = g.gebruikersID
      where prive=0 AND g.naam like %s
      order by ".$ordertypes[$curOptions["ordertype"]]."
      Limit %d ,12",

@@ -1,4 +1,4 @@
-height<?php
+<?php
 /**
  * quarty-child functions and definitions
  *
@@ -59,24 +59,50 @@ function getImageCanvasSize($height,$width){
 
   $ratioH= ($height / $gcd);
   $ratioW= ($width / $gcd);
+	//
+  // if($height>3*$conversionRate){
+  //   $newH=3*$conversionRate;
+  //   $newW= $width/$ratioW*$ratioH;
+  // }
+	// else{
+  //     $newH=$height;
+  //     $newW=$width;
+  // }
+  // if($width>5*$conversionRate){
+  //   $newW=5*$conversionRate;
+  //   $newH= $width/$ratioH*$ratioW;
+  // }
+	// else{
+  //     $newH=$height;
+  //     $newW=$width;
+  // }
+  // $ratioHe=3*$conversionRate/$height;
+  // $ratioWe=5*$conversionRate/$width;
+  // echo "width:".$ratioHe." height:".$ratioWe;
+	//w5:3h
+	if($height>$conversionRate*3||$width>$conversionRate*5){
+		if($ratioH>$ratioW){
+			$newH=$conversionRate*3;
+			$newW= $newH/$ratioH*$ratioW;
+		}
+		else{
+			$newW=$conversionRate*5;
+			$newH= $newW/$ratioW*$ratioH;
+			if($newH>$conversionRate*3){
+				$newH=$conversionRate*3;
+				$newW= $newH/$ratioH*$ratioW;
+			}
+		}
+	}else{
+		$newH=$height;
+		$newW=$width;
+	}
+	return array("height"=>$newH/$conversionRate,"width"=>$newW/$conversionRate);
+}
 
-  if($height>3*$conversionRate){
-    $newH=3*$conversionRate;
-    $newW= $width/$ratioW*$ratioH;
-  }else{
-      $newH=$height;
-      $newW=$width;
-  }
-  if($width>5*$conversionRate){
-    $newW=5*$conversionRate;
-    $newH= $width/$ratioH*$ratioW;
-  }else{
-      $newH=$height;
-      $newW=$width;
-  }
-  $ratioHe=3*conversionRate/$height;
-  $ratioWe=5*conversionRate/$width;
-  echo "width:".$ratioHe."".$ratioWe;
-  var_dump($ratioH,$ratioW,$newH,$newW);
+add_shortcode('sizeTest', 'CWGSizeTest');
+function CWGSizeTest(){
 
+  echo json_encode(getImageCanvasSize(500,300))." 500h x 300w <br>";
+  echo json_encode(getImageCanvasSize(300,500))." 300h x 500w <br>";
 }
