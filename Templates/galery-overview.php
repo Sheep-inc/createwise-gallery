@@ -23,25 +23,11 @@
          </div>
        </div>
        <div id="galleryHolder">
-         <div class="card galleryCard col-md-4 col-sm-12">
-           <a href="https://nl.wiki.forgeofempires.com/index.php?title=Van_Gogh">
-             Van Gogh:<br>
-             <img src="https://nl.wiki.forgeofempires.com/images/8/89/VAN-GOGH.png" class="card-img-top" alt="...">
-             </a>
-             <div class="card-body">
-               <h5 class="card-title"><a href="/users/jwpancake">JW Pancake</a></h5>
-             </div>
-         </div>
-
-         <div class="card galleryCard col-md-4 col-sm-12">
-           <a href="https://www.youtube.com/watch?v=OXyxn3YS8sg">
-             Enzo Knol:<br>
-             <img src="https://i.ytimg.com/vi/OXyxn3YS8sg/mqdefault.jpg" class="card-img-top" alt="...">
-             </a>
-             <div class="card-body">
-               <h5 class="card-title"><a href="/users/Sjoerd Janssen">Sjoerd Janssen</a></h5>
-             </div>
-         </div>
+     </div>
+     <div>
+       <ul class= "pagination">
+         
+       </ul>
      </div>
   </div>
   <script refer src="/wp-content/themes/createwise-gallery/scripts/galleryOverview.js"></script>
