@@ -68,3 +68,10 @@ li.numb, li.dots {
   right: 0px;
   bottom: 0px;
 }
+#np{
+  position: fixed;
+  left: 20px;
+  width: 10%;
+  height: 10%;
+  background-color: #CEB3AD;
+}
