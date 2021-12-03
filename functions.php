@@ -11,6 +11,8 @@
  * Enqueue styles.
  */
 require_once( get_stylesheet_directory(). '/galleryOverview.php' );
+require_once( get_stylesheet_directory(). '/Templates/aframe.php' );
+require_once( get_stylesheet_directory(). '/Templates/galery-overview.php' );
 // require_once( get_stylesheet_directory(). '/createwise-gallery.php' );
 require_once( get_stylesheet_directory(). '/imgupload.php' );
 function quarty_child_stylesheets() {
@@ -44,11 +46,14 @@ function getImageCanvasSize($height,$width){
   //bereken ratio
   //is pixels binnen limiet van h en w
   //
-  $newH=0;
+	$maxH=1200;
+	$maxW=2000;
+	$conversionRate=1;
+	$newH=0;
   $newW=0;
   $_height = $height;
   $_width = $width;
-  $conversionRate=10;
+
   while ($_width != 0) {
      $remainder = $height % $_width;
      $_height = $_width;
@@ -80,16 +85,16 @@ function getImageCanvasSize($height,$width){
   // $ratioWe=5*$conversionRate/$width;
   // echo "width:".$ratioHe." height:".$ratioWe;
 	//w5:3h
-	if($height>$conversionRate*3||$width>$conversionRate*5){
+	if($height>$conversionRate*$maxH||$width>$conversionRate*$maxH){
 		if($ratioH>$ratioW){
-			$newH=$conversionRate*3;
+			$newH=$conversionRate*$maxH;
 			$newW= $newH/$ratioH*$ratioW;
 		}
 		else{
-			$newW=$conversionRate*5;
+			$newW=$conversionRate*$maxW;
 			$newH= $newW/$ratioW*$ratioH;
-			if($newH>$conversionRate*3){
-				$newH=$conversionRate*3;
+			if($newH>$conversionRate*$maxH){
+				$newH=$conversionRate*$maxH;
 				$newW= $newH/$ratioH*$ratioW;
 			}
 		}
@@ -102,7 +107,13 @@ function getImageCanvasSize($height,$width){
 
 add_shortcode('sizeTest', 'CWGSizeTest');
 function CWGSizeTest(){
-
+  echo json_encode(getImageCanvasSize(1963.08,1880.26))."(1963.08h,1880.26w) <br>";
+  echo json_encode(getImageCanvasSize(1860,2800))." (1860h,2800w) <br>";
+  echo json_encode(getImageCanvasSize(915.04,2924.67))." (915.04h,2924.67w) <br>";
+  echo json_encode(getImageCanvasSize(2000,800))." (2000h,800w) <br>";
   echo json_encode(getImageCanvasSize(500,300))." 500h x 300w <br>";
   echo json_encode(getImageCanvasSize(300,500))." 300h x 500w <br>";
+
+
+
 }
