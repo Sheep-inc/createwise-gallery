@@ -4,3 +4,91 @@ Template: quarty
 Text Domain: CWG
 Tags: full-width-template, editor-style, featured-images, sticky-post, threaded-comments, translation-ready, theme-options
 */
+
+#profileImg{
+  max-width: 100%;
+  border-radius:50%;
+}
+.Social_Media_Button a img{
+  max-width: 3em;
+}
+.card{
+  /* width: 22%!important;
+  margin: 0 1% 1% 1% */
+}
+.searchHeader{
+  display: flex;
+}
+#searchbar{
+  width: 100%;
+  border-radius: 1em;
+  margin-right: 50px
+}
+.galleryCard{
+  text-align: center;
+}
+.tableGalerij{
+  margin-left: auto;
+  margin-right: auto;
+  width:50%
+}
+.tableGalerij td, .tableGalerij th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.tableGalerij tr:nth-child(even){background-color: #f2f2f2;}
+
+.tableGalerij tr:hover {background-color: #ddd;}
+
+.tableGalerij th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #88171F;
+  color: white;
+}
+/* start pagination styling */
+.pagination ul{
+  display: flex;
+}
+
+.pagination li{
+  list-style: none;
+  background-color: #88171F;
+  border-radius: 1em;
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
+  color: white;
+}
+
+li.numb, li.dots {
+  padding: 10px;
+  margin: 5xp;
+}
+.magic-desc-box{
+  /* display: none; */
+  display: block;
+  z-index: 9999999;
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+}
+#np{
+  position:fixed;
+  display:block;
+  bottom:20px;
+  z-index:20;
+  left: 25px;
+  width: 15%;
+  height: 15%;
+}
+
+.qrt-left-bar{
+  display: none !important;
+}
+
+.qrt-app{
+  margin: unset !important;
+}
