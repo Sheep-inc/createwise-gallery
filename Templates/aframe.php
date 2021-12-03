@@ -1,6 +1,12 @@
+<?php
+function galleryShortCode(){
+
+?>
 <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
-<script src="/wp-content/themes/createwise-gallery/scripts/nipple.js"></script>
+<?php
+echo(wp_is_mobile())?'<script src="/wp-content/themes/createwise-gallery/scripts/nipple.js"></script>':""
+?>
 <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
 <link rel="stylesheet"  href="/wp-content/themes/createwise-gallery/style/style.css">
 <style>
@@ -34,7 +40,7 @@
     <img id="my-image" src="https://picsum.photos/400/400">
     <img id="sky" src="https://t4.ftcdn.net/jpg/03/81/81/55/360_F_381815539_CUlqLBRjBFrFnkRNUGaF52eL5fNXSwrU.jpg">
     <img id="wall" src="/wp-content/themes/createwise-gallery/images/Concrete.jpg">
-    <img id="wood" src="/wp-content/themes/createwise-gallery/images/wood.jpg">
+    <img id="wood" src="/wp-content/themes/createwise-gallery/images/concretefloor.jpg">
   </a-assets>
   <!-- Camera Entity -->
   <a-entity id="cameraHolder" width="0" depth="0" position="0 1.6 0">
@@ -77,9 +83,9 @@
       rotation="-90 0 0"
       position="0 0 -2.35" width="20" height="13"
       src="#wood"
-      repeat="3 2"
+      repeat="5 3"
       normal-map="#wood"
-      normal-texture-repeat="3 2"
+      normal-texture-repeat="5 3"
       roughness="0.8"
     ></a-plane>
 
@@ -116,7 +122,11 @@
 
   <a-sky src="#sky"></a-sky>
 </a-scene>
-<div class="magic-desc-box">
+<!-- <div class="magic-desc-box">
   LOOK MOM IM ON TV
-</div>
+</div> -->
 </body>
+<?php
+}
+add_shortcode('cwGallery', 'galleryShortCode')
+ ?>

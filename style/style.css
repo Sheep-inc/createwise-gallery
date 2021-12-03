@@ -69,9 +69,23 @@ li.numb, li.dots {
   bottom: 0px;
 }
 #np{
-  position: fixed;
-  left: 20px;
-  width: 10%;
-  height: 10%;
-  background-color: #CEB3AD;
+  position:fixed;
+  display:block;
+  bottom:20px;
+  z-index:20;
+  left: 25px;
+  width: 15%;
+  height: 15%;
+}
+
+.qrt-left-bar{
+  display: none !important;
+}
+
+.qrt-top-bar {
+  border-radius: unset!important;
+}
+
+.qrt-app{
+  margin: 0px !important;
 }
