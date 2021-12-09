@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Galerij inrichten</title>
-</head>
-<body>
-  <style>
-    #FileUploadArt{
-      display: none!important;
-    }
-    #fileUploadSVG{
-      height: 5em;
-    }
-  </style>
-
-<h1>Richt je galerij in</h1>
+<?php
+function galleryMakePage(){
+?>
 
 <form action="/action_page.php">
   <label for="fname">Galerij naam:</label>
@@ -34,5 +21,7 @@
 
   <input type="submit" value="Toevoegen">
 </form>
-</body>
-</html>
+<?php
+}
+add_shortcode('makeGallery', 'galleryMakePage')
+ ?>
