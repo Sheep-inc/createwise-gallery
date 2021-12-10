@@ -1,5 +1,62 @@
 <?php
 function galleryShortCode(){
+$positions=[
+  [
+    "x"=>-6.018,
+    "y"=>2,
+    "z"=>3.59,
+    "rotation"=>0
+  ],
+  [
+    "x"=>-0.017,
+    "y"=>2,
+    "z"=>3.59,
+    "rotation"=>0
+  ],[
+    "x"=>5.975,
+    "y"=>2,
+    "z"=>3.59,
+    "rotation"=>0
+  ],
+  [
+    "x"=>0.011,
+    "y"=>2,
+    "z"=>-8.3,
+    "rotation"=>0
+  ],[
+    "x"=>6.2,
+    "y"=>2,
+    "z"=>-8.3,
+    "rotation"=>0
+  ],[
+    "x"=>5.984,
+    "y"=>2,
+    "z"=>-8.3,
+    "rotation"=>90
+  ],
+  [
+    "x"=>8.9,
+    "y"=>2,
+    "z"=>-5.38,
+    "rotation"=>90
+  ],[
+    "x"=>8.9,
+    "y"=>2,
+    "z"=>0.606,
+    "rotation"=>90
+  ],
+  [
+    "x"=>-8.9,
+    "y"=>2,
+    "z"=>-5.38,
+    "rotation"=>90
+  ],[
+    "x"=>-8.9,
+    "y"=>2,
+    "z"=>0.606,
+    "rotation"=>90
+  ],
+]
 ?>
 <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
@@ -7,7 +64,6 @@ function galleryShortCode(){
 echo(wp_is_mobile())?'<script src="/wp-content/themes/createwise-gallery/scripts/nipple.js"></script>':""
 ?>
 <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
-<link rel="stylesheet"  href="/wp-content/themes/createwise-gallery/style/style.css">
 <style>
 .magic-desc-box{
   /* display: none; */
@@ -37,6 +93,12 @@ echo(wp_is_mobile())?'<script src="/wp-content/themes/createwise-gallery/scripts
   <a-entity light="type: ambient"> </a-entity>
   <a-assets>
     <img id="my-image" src="https://picsum.photos/400/400">
+    <?php
+    // foreach ($variable as $key => $value) {
+    //     echo '<a-image position="-8.9 2 0.606" rotation="0 90 0" src="#my-image" ></a-image>
+    //           <a-box color="grey" depth="1" height="1" width=".1" position="-9 2 0.606"></a-box>  ';
+    // }
+    ?>
     <img id="sky" src="https://t4.ftcdn.net/jpg/03/81/81/55/360_F_381815539_CUlqLBRjBFrFnkRNUGaF52eL5fNXSwrU.jpg">
     <img id="floor" src="/wp-content/themes/createwise-gallery/images/concretefloor3.jpg">
   </a-assets>
@@ -113,7 +175,7 @@ echo(wp_is_mobile())?'<script src="/wp-content/themes/createwise-gallery/scripts
     <a-image position="-8.9 2 0.606" rotation="0 90 0" src="#my-image" ></a-image>
     <a-box color="grey" depth="1" height="1" width=".1" position="-9 2 0.606"></a-box>
 
-
+    <a-text  position="-5 2 2"  text="value: eet je schoen maar op">
   <a-sky src="#sky"></a-sky>
 </a-scene>
 <!-- <div class="magic-desc-box">
