@@ -34,7 +34,22 @@ add_action( 'wp_enqueue_scripts', 'quarty_child_stylesheets' );
 //     );
 // }
 
-
+// function GetGalleryImages($user){
+// 	global $wpdb;
+// 	$artworks= $wpdb->get_results($wpdb->prepare("SELECT * from wpox_wfu_log l
+//
+// 	where userid=%d",array($user)));
+//
+// }
+//
+//
+// function GetUserImages($user){
+// 	global $wpdb;
+// 	$artworks= $wpdb->get_results($wpdb->prepare("SELECT * from wpox_wfu_log l
+//
+// 	where userid=%d",array($user)));
+//
+// }
 
 
 /**

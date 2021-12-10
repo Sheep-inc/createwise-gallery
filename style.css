@@ -1,6 +1,6 @@
 /*!
-Theme Name: quarty child
-Template: quarty
+Theme Name: Wise Gallery
+Template: neve
 Text Domain: CWG
 Tags: full-width-template, editor-style, featured-images, sticky-post, threaded-comments, translation-ready, theme-options
 */
@@ -67,14 +67,7 @@ li.numb, li.dots {
   padding: 10px;
   margin: 5xp;
 }
-.magic-desc-box{
-  /* display: none; */
-  display: block;
-  z-index: 9999999;
-  position: fixed;
-  right: 0px;
-  bottom: 0px;
-}
+
 #np{
   position:fixed;
   display:block;
@@ -85,10 +78,42 @@ li.numb, li.dots {
   height: 15%;
 }
 
-.qrt-left-bar{
-  display: none !important;
+
+.nv-page-title{
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.qrt-app{
-  margin: unset !important;
+#wordpress_file_upload_block_1{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1{
+  text-align: center;
+}
+
+.file_title_clean{
+  margin-bottom: 30px;
+}
+
+#userdata_1_1{
+  margin-bottom: 30px;
+}
+
+#userdata_1_label_1{
+  margin-bottom: 10px;
+}
+
+#userdata_1_2{
+  margin-bottom: 30px;
+}
+
+#userdata_1_0{
+  margin-bottom: 30px;
+  margin-top: 5px;
+}
+
+#upload_1{
+  margin-top: 30px;
 }

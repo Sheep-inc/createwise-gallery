@@ -22,9 +22,7 @@ define('TYPE_WHITELIST', serialize(array(
 function sui_form_shortcode(){
 
   if(!is_user_logged_in()){
-
     return '<p>You need to be logged in to submit an image.</p>';
-
   }
 
   global $current_user;
@@ -69,7 +67,7 @@ function sui_form_shortcode(){
   }
 
 
-  echo sui_get_upload_image_form($sui_image_caption = $_POST['sui_image_caption'], $sui_image_category = $_POST['sui_image_category']);
+  echo sui_get_upload_image_form();
 
   if($user_images_table = sui_get_user_images_table($current_user->ID)){
 
@@ -236,7 +234,7 @@ function sui_get_upload_image_form($sui_image_caption = '', $sui_image_category 
   $out .= '<label for="sui_image_caption">Image Caption - Letters, Numbers and Spaces</label><br/>';
   $out .= '<input type="text" id="sui_image_caption" name="sui_image_caption" value="' . $sui_image_caption . '"/><br/>';
   $out .= '<label for="sui_image_category">Image Category</label><br/>';
-  $out .= sui_get_image_categories_dropdown('sui_image_category', $sui_image_category) . '<br/>';
+  // $out .= sui_get_image_categories_dropdown('sui_image_category', $sui_image_category) . '<br/>';
   $out .= '<label for="sui_image_file">Select Your Image - ' . MAX_UPLOAD_SIZE . ' bytes maximum</label><br/>';
   $out .= '<input type="file" size="60" name="sui_image_file" id="sui_image_file"><br/>';
 
