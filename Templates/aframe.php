@@ -1,6 +1,5 @@
 <?php
 function galleryShortCode(){
-
 ?>
 <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
@@ -39,8 +38,7 @@ echo(wp_is_mobile())?'<script src="/wp-content/themes/createwise-gallery/scripts
   <a-assets>
     <img id="my-image" src="https://picsum.photos/400/400">
     <img id="sky" src="https://t4.ftcdn.net/jpg/03/81/81/55/360_F_381815539_CUlqLBRjBFrFnkRNUGaF52eL5fNXSwrU.jpg">
-    <img id="wall" src="/wp-content/themes/createwise-gallery/images/Concrete.jpg">
-    <img id="wood" src="/wp-content/themes/createwise-gallery/images/concretefloor.jpg">
+    <img id="floor" src="/wp-content/themes/createwise-gallery/images/concretefloor3.jpg">
   </a-assets>
   <!-- Camera Entity -->
   <a-entity id="cameraHolder" width="0" depth="0" position="0 1.6 0">
@@ -50,10 +48,7 @@ echo(wp_is_mobile())?'<script src="/wp-content/themes/createwise-gallery/scripts
       static-body=""
       position="-9.26 2 -2.35"
       width=".5" height="4" depth="13"
-      src="#wall"
-      repeat="2 1"
-      normal-map="#wall"
-      normal-texture-repeat="2 1"
+      color="#23282b"
     ></a-box>
 
     <a-box
@@ -74,7 +69,6 @@ echo(wp_is_mobile())?'<script src="/wp-content/themes/createwise-gallery/scripts
       static-body=""
       position="0 2 3.9"
       width="19" height="4" depth="0.5"
-      src="#wall"
       color="#23282b"
     ></a-box>
 
@@ -82,9 +76,9 @@ echo(wp_is_mobile())?'<script src="/wp-content/themes/createwise-gallery/scripts
       static-body=""
       rotation="-90 0 0"
       position="0 0 -2.35" width="20" height="13"
-      src="#wood"
+      src="#floor"
       repeat="5 3"
-      normal-map="#wood"
+      normal-map="#floor"
       normal-texture-repeat="5 3"
       roughness="0.8"
     ></a-plane>

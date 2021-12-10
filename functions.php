@@ -13,12 +13,18 @@
 require_once( get_stylesheet_directory(). '/galleryOverview.php' );
 require_once( get_stylesheet_directory(). '/Templates/aframe.php' );
 require_once( get_stylesheet_directory(). '/Templates/galery-overview.php' );
+require_once( get_stylesheet_directory(). '/Templates/design-your-space.php' );
 // require_once( get_stylesheet_directory(). '/createwise-gallery.php' );
 require_once( get_stylesheet_directory(). '/imgupload.php' );
 function quarty_child_stylesheets() {
-	wp_enqueue_style( 'CWG-style', get_template_directory_uri() . '/style.css', array( 'quarty-style' ), '1.0.0' );
+	wp_enqueue_style( 'CWG-style', "/wp-content/themes/createwise-gallery" . '/style.css', array( 'neve-style' ), '1.0.0' );
+	// echo "SEND HALP";
 }
 add_action( 'wp_enqueue_scripts', 'quarty_child_stylesheets' );
+// function neve_child_load_css() {
+// 		wp_enqueue_style( 'neve-child-style', trailingslashit( get_stylesheet_directory_uri() ) . '/styling/style.css', array( 'neve-style' )," 1.0.0" );
+// }
+// add_action( 'wp_enqueue_scripts', 'neve_child_load_css', 1 );
 
 // add_action( 'wp_enqueue_scripts', 'create_wise_gallery_styles' );
 // function create_wise_gallery_styles() {
