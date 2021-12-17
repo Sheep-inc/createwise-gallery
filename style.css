@@ -100,20 +100,42 @@ h1{
 #userdata_1_1{
   margin-bottom: 30px;
 }
-
+/*Dit gaat over "beschrijving:(verplicht)" */
 #userdata_1_label_1{
   margin-bottom: 10px;
+  margin-right: 40px;
 }
 
 #userdata_1_2{
   margin-bottom: 30px;
 }
-
+/* Dit gaat over het naamverplicht met tekstvak*/
 #userdata_1_0{
   margin-bottom: 30px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 #upload_1{
   margin-top: 30px;
+}
+/* dit gaat alleen over "naam verplicht" */
+#userdata_1_label_0{
+  margin-right: 40px;
+}
+/* dit gaat over de tekst "Is dit 18+ content"  */
+#userdata_1_label_2{
+  margin-right: 40px
+}
+
+.file_td_clean{
+  padding: 0px 50px 0px 0px !important;
+}
+
+#uploadform_1,input[type="button"].file_input_button{
+  width: 10em !important;
+  overflow: unset !important;
+}
+
+input[type="button"].file_input_button_hover{
+  width: 10em !important;
 }
