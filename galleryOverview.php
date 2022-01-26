@@ -26,7 +26,8 @@ function galleryLibrary($options=[],$user=null){
       }elseif($key=="page"){
         if(is_numeric($options["page"]) && intval($options["page"]) >=1 ){
           $curOptions["page"]=(intval($options[$key])-1)*12;
-        }else{
+        }
+        else{
           $curOptions["page"]=0;
         }
       }else{
@@ -45,19 +46,29 @@ function galleryLibrary($options=[],$user=null){
       $params
   ));
   $params[]=$curOptions["page"];
+/*
+"SELECT g.id as ID,g.naam as Name,u.display_name as user , img.file_path as url  from galleries g
+inner join wpox_users u on u.id = g.gebruikersID
+inner join gallerycontent gc on gc.gallery = g.id and location =1
+inner join wpox_wfu_log img on img.uploadid = gc.kunstid
+ where prive=0 AND g.naam like %s
+ order by ".$ordertypes[$curOptions["ordertype"]]."
+*/
+
   // var_dump($params);
   $cards = $wpdb->get_results(
     $wpdb->prepare(
-    "SELECT g.id as ID,g.naam as Name,u.display_name as user from galleries g
-    inner join wpox_users u on u.id = g.gebruikersID
-     where prive=0 AND g.naam like %s
-     order by ".$ordertypes[$curOptions["ordertype"]]."
-     Limit %d ,12",
+      "SELECT g.id as ID,g.naam as Name,u.user_nicename as user , img.filepath as url ,ud.propvalue as is18p  from galleries g
+      inner join wpox_users u on u.id = g.gebruikersID
+      inner join gallerycontent gc on gc.gallery = g.id and location =1
+      inner join wpox_wfu_log img on img.uploadid = gc.kunstid
+      inner join wpox_wfu_userdata ud on ud.uploadid= gc.kunstid and ud.property ='Is dit 18+ content'
+       where prive=0 AND g.naam like %s
+       order by ".$ordertypes[$curOptions["ordertype"]]."Limit %d ,12",
       $params
     ),
   "ARRAY_A");
-
-  return array("cards"=>$cards,"items"=>100);//$items);
+  return array("cards"=>$cards,"items"=>$items);
 }
 
 function cw_loadGalleries(){
@@ -73,6 +84,15 @@ function cw_loadGalleries(){
   }
   echo json_encode(galleryLibrary($options,$user));
   wp_die();
+}
+
+add_action('wp_ajax_GetUserImages', 'GetUserImages'); // for logged in user
+function GetUserImages(){
+	global $wpdb;
+	$artworks= $wpdb->get_results($wpdb->prepare("SELECT * from ArtPiecesUploads where userid=%d",array(get_current_user_id())));
+  echo json_encode($artworks);
+  wp_die();
+  return;
 }
 
 //

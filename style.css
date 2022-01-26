@@ -140,13 +140,116 @@ h1{
 input[type="button"].file_input_button_hover{
   width: 10em !important;
 }
-<<<<<<< HEAD
-=======
 
 .show#image-modal{
   background: rgb(0 0 0 / 40%);
 }
-.nv-content-wrap.entry-content{
+.page-id-26 .nv-content-wrap.entry-content{
   text-align: center;
 }
->>>>>>> 6a93d0d2d6b4f8a9306a25cdb022685daf7c4d08
+
+.um input[type="submit"].um-button, .um a.um-button:hover, .um .um-field-group-head, .picker__box, .picker__nav--prev:hover, .picker__nav--next:hover, .um .um-members-pagi span.current, .um .um-members-pagi span.current:hover, .um .um-profile-nav-item.active a, .um .um-profile-nav-item.active a:hover, .upload, .um-modal-header, .um-modal-btn, .um-modal-btn.disabled, .um-modal-btn.disabled:hover, div.uimob800 .um-account-side li a.current, div.uimob800 .um-account-side li a.current:hover {
+  background: #962919!important;
+}
+
+.um input[type="submit"].um-button:hover{
+  background: rgba(136, 22, 30, 0.45)!important;
+}
+
+.um-profile.um .um-profile-headericon a:hover, .um-profile.um .um-profile-edit-a.active, .um .um-tip:hover, .um .um-field-radio.active:not(.um-field-radio-state-disabled) i, .um .um-field-checkbox.active:not(.um-field-radio-state-disabled) i, .um .um-member-name a:hover, .um .um-member-more a:hover, .um .um-member-less a:hover, .um .um-members-pagi a:hover, .um .um-cover-add:hover, .um .um-profile-subnav a.active, .um .um-item-meta a, .um-account-nav a.current, .um-account-side li a.current span.um-account-icon, .um-account-side li a.current:hover span.um-account-icon, .um-dropdown li a:hover, i.um-active-color, span.um-active-color, .um a.um-link{
+  color: #962919!important;
+}
+
+.um-account-name a:hover{
+    color: rgba(136, 22, 30, 0.45)!important;
+  }
+
+#um_account_submit_mytab{
+    display: none;
+  }
+
+.um-account-heading{
+  display: none !important;
+}
+
+.um-request-button{
+  background: #962919!important;
+}
+
+.um-request-button a{
+  color: #ffffff!important;
+}
+
+#galleryHolder{
+  margin-top: 50px;
+}
+
+.card-img-top {
+  max-height: 300px;
+  width: auto;
+}
+
+.um-22.um .um-profile-body{
+  max-width: 100%!important;
+}
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 100; /* Add a z-index if needed */
+  right: 10px; /* Center the snackbar */
+  top: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {top: 30px; opacity: 1;}
+  to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {top: 30px; opacity: 1;}
+  to {top: 0; opacity: 0;}
+}
+
+#is18p{
+  display: block;
+  background: rgb(0 0 0 / 93%);
+  padding-top:18vh;
+}
+#is18p_continue{
+  background-color: #88171F;
+  border-color: #88171F;
+}
+
+.nsfw{
+  webkit-filter: blur(4px)!important; /* Chrome, Safari, Opera */
+  filter: blur(4px)!important;
+}

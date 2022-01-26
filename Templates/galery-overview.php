@@ -13,7 +13,7 @@ function galleryOverviewShortCode(){
            </select>
          </div>
        </div>
-       <div id="galleryHolder">
+       <div id="galleryHolder" class="row">
      </div>
      <div>
        <ul class= "pagination">

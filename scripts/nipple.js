@@ -57,7 +57,7 @@ function updatePosition(data) {
     f = data.force;
     ang = data.angle.radian
     cam = document.getElementById("camera");
-    f= (f <= 1.5)?f:1.5;
+    f= (f <= 0.75)?f:0.75;
 
     x_vec = Math.cos(ang + 3.14 / 180 * cam.getAttribute('rotation')['y']);
     y_vec = Math.sin(ang + 3.14 / 180 * cam.getAttribute('rotation')['y']);

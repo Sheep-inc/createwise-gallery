@@ -28,13 +28,15 @@ class gallery{
         var cards= json.cards??json;
         cards.forEach(item=>{
 
-          html+=`<div class="card galleryCard col-md-4 col-sm-12">
-            <a href="/galeries/${item.ID}">
+          html+=`<div class="galleryCard col-md-4 col-sm-12">
+          <div class="card">
+            <a href="/galerij/?id=${item.ID}">
               ${item.Name}:<br>
-              <img src="${item.url}" class="card-img-top" alt="${item.Name}">
+              <img src="${item.url}" class="card-img-top ${item.is18p=="true"?"nsfw":""}" alt="${item.Name}">
               </a>
               <div class="card-body">
-                <h5 class="card-title"><a href="/users/${item.user}">${item.user}</a></h5>
+                <h5 class="card-title"><a href="/user/${item.user}">${item.user}</a></h5>
+              </div>
               </div>
           </div>`
 
@@ -45,7 +47,7 @@ class gallery{
           //     <p class="card-title text-center">${item.Name.replaceAll("\\","")}</p>
           //   </div>
           // </div>`;
-        
+
         })
         html=html==""?"no galleries found":html
         return html;

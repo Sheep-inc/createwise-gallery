@@ -10,6 +10,8 @@
 /**
  * Enqueue styles.
  */
+require_once( get_stylesheet_directory(). '/customUserAccountTabs.php' );
+require_once( get_stylesheet_directory(). '/userGalleries.php' );
 require_once( get_stylesheet_directory(). '/galleryOverview.php' );
 require_once( get_stylesheet_directory(). '/Templates/aframe.php' );
 require_once( get_stylesheet_directory(). '/Templates/galery-overview.php' );
@@ -18,9 +20,16 @@ require_once( get_stylesheet_directory(). '/Templates/design-your-space.php' );
 require_once( get_stylesheet_directory(). '/imgupload.php' );
 function quarty_child_stylesheets() {
 	wp_enqueue_style( 'CWG-style', "/wp-content/themes/createwise-gallery" . '/style.css', array( 'neve-style' ), '1.0.0' );
-	// echo "SEND HALP";
+	// if( is_page(ID) ) {
+		// wp_enqueue_script('js-file', 'PATH_TO_JS_FILE', array('jquery'), '', false);
+		//or use the version below if you know exactly where the file is
+		wp_enqueue_script( 'js-file', str_ireplace("neve","createwise-gallery",get_template_directory_uri()) . '/scripts/main.js');
+	// }
 }
 add_action( 'wp_enqueue_scripts', 'quarty_child_stylesheets' );
+function collectiveray_load_js_script() {
+
+}
 // function neve_child_load_css() {
 // 		wp_enqueue_style( 'neve-child-style', trailingslashit( get_stylesheet_directory_uri() ) . '/styling/style.css', array( 'neve-style' )," 1.0.0" );
 // }
@@ -49,13 +58,6 @@ add_action( 'wp_enqueue_scripts', 'quarty_child_stylesheets' );
 // }
 //
 //
-// function GetUserImages($user){
-// 	global $wpdb;
-// 	$artworks= $wpdb->get_results($wpdb->prepare("SELECT * from wpox_wfu_log l
-//
-// 	where userid=%d",array($user)));
-//
-// }
 
 
 /**
@@ -69,7 +71,7 @@ function getImageCanvasSize($height,$width){
   //
 	$maxH=1200;
 	$maxW=2000;
-	$conversionRate=1;
+	$conversionRate=600;
 	$newH=0;
   $newW=0;
   $_height = $height;
@@ -85,27 +87,6 @@ function getImageCanvasSize($height,$width){
 
   $ratioH= ($height / $gcd);
   $ratioW= ($width / $gcd);
-	//
-  // if($height>3*$conversionRate){
-  //   $newH=3*$conversionRate;
-  //   $newW= $width/$ratioW*$ratioH;
-  // }
-	// else{
-  //     $newH=$height;
-  //     $newW=$width;
-  // }
-  // if($width>5*$conversionRate){
-  //   $newW=5*$conversionRate;
-  //   $newH= $width/$ratioH*$ratioW;
-  // }
-	// else{
-  //     $newH=$height;
-  //     $newW=$width;
-  // }
-  // $ratioHe=3*$conversionRate/$height;
-  // $ratioWe=5*$conversionRate/$width;
-  // echo "width:".$ratioHe." height:".$ratioWe;
-	//w5:3h
 	if($height>$conversionRate*$maxH||$width>$conversionRate*$maxH){
 		if($ratioH>$ratioW){
 			$newH=$conversionRate*$maxH;
@@ -135,6 +116,29 @@ function CWGSizeTest(){
   echo json_encode(getImageCanvasSize(500,300))." 500h x 300w <br>";
   echo json_encode(getImageCanvasSize(300,500))." 300h x 500w <br>";
 
+}
+function my_wp_is_mobile() {
+    static $is_mobile;
 
+    if ( isset($is_mobile) )
+        return $is_mobile;
 
+    if ( empty($_SERVER['HTTP_USER_AGENT']) ) {
+        $is_mobile = false;
+    } elseif (
+        strpos($_SERVER['HTTP_USER_AGENT'], 'Android') !== false
+        || strpos($_SERVER['HTTP_USER_AGENT'], 'Silk/') !== false
+        || strpos($_SERVER['HTTP_USER_AGENT'], 'Kindle') !== false
+        || strpos($_SERVER['HTTP_USER_AGENT'], 'BlackBerry') !== false
+        || strpos($_SERVER['HTTP_USER_AGENT'], 'Opera Mini') !== false ) {
+            $is_mobile = true;
+    } elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Mobile') !== false && strpos($_SERVER['HTTP_USER_AGENT'], 'iPad') == false) {
+            $is_mobile = true;
+    } elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'iPad') !== false) {
+        $is_mobile = false;
+    } else {
+        $is_mobile = false;
+    }
+
+    return $is_mobile;
 }
