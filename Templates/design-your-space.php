@@ -1,5 +1,6 @@
 <?php
 function galleryMakePage(){
+  //currently hardcoded when more galery type are added this should be loaded dynamically
   $items=10;
   $data=[];
   $images=[];
@@ -26,12 +27,13 @@ function galleryMakePage(){
   <label for="desc">Beschrijving:</label>
   <textarea name="desc" rows="4" cols="50"><?= $data["beschrijving"]??""?></textarea>
     <br>
-  <label for="fname">Is dit een prive galerij?</label>
+  <label>Is dit een prive galerij?</label>
   <input name="prive" type="checkbox" <?= isset($data["prive"])&&$data["prive"]?"checked":""?>><br><br>
   <!-- <input type="file" id="FileUploadArt" name="filename"><br><br> -->
 
   <div class=" gallery-make-page row">
     <div class="col-12 col-md-6">
+    <!-- currently hardcoded image should change to show template image of gallery chosen later -->
       <img src="/wp-content/themes/createwise-gallery/images/template.png">
     </div>
     <div class="col-12 col-md-6">
@@ -130,6 +132,7 @@ function cw_editGalleries(){
 
   foreach ($photos as $photo) {
     $i++;
+    //this is added to skip empty items but keep the location of the painting saved
     if($photo!=""){
       $wpdb->query($wpdb->prepare("INSERT INTO gallerycontent (kunstid,gallery,location) values(%s,%d,%d)",array(
         $photo,$id,$i

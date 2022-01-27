@@ -4,22 +4,18 @@ function galleryShortCode()
   global $wpdb;
   if (empty($_GET["id"])) {
     $_GET["id"] = 47;
-    // echo "<script>
-    //   window.location.replace('/galerij-overzicht/')
-    // </script>";
   }
   $gallery = $wpdb->get_row($wpdb->prepare("SELECT * from galleries where id=%d", array($_GET["id"])), "ARRAY_A");
   if (empty($gallery)) {
-    // echo "<script>
-    //   window.location.replace('/galerij-overzicht/')
-    // </script>";
+    echo "<script>
+      window.location.replace('/galerij-overzicht/')
+    </script>";
     return;
   }
   $images = [];
   $images = $wpdb->get_results($wpdb->prepare("SELECT * from gallerycontent gc
     inner join ArtPiecesUploads a on a.uploadid= gc.kunstid
     where gallery=%d", array($_GET["id"])), "ARRAY_A");
-    // var_dump($images);
   /*
     op het moment is er een aframe template dus heb ik hier in de positions variable de posities geplaatst
     wanneer er meerdere templates zijn moet er een functie worden gemaakt of een include voor de nieuwe
@@ -138,16 +134,18 @@ function galleryShortCode()
       z-index: 1;
     }
   </style>
+  <!-- joystick en physics inladen -->
 <script src="/wp-content/themes/createwise-gallery/scripts/nipple.js"></script>
   <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
   <body>
-    <!-- ="debug: true" -->
+    <!-- ="debug: true" kan worden gebruikt tijdens het testen -->
     <a-scene device-orientation-permission-ui="enabled: false" physics joystick vr-mode-ui="enabled: false">
       <a-entity light="type: ambient"> </a-entity>
       <a-assets>
         <?php
         $imgText = "";
         $path= substr(ABSPATH,0,-1);
+        // insert images
         foreach ($images as $key => $value) {
           echo '<img id="my-image-' . $key . '" src="' . ($value["link"]) . '">';
           echo ($path.$value["link"]);
@@ -194,7 +192,7 @@ function galleryShortCode()
 
       </a-assets>
       <!-- Camera Entity -->
-      <a-entity id="cameraHolder" width="0" depth="0" position="0 1.6 0">
+      <a-entity id="cameraHolder" width="0" depth="0" position="0 2 0">
         <a-entity id="camera" camera look-controls wasd-controls="acceleration: 300" kinematic-body></a-entity>
       </a-entity>
       <a-box static-body="" position="-9.26 2 -2.35" width=".5" height="4" depth="13" src="#wall" repeat="2 2" normal-map="#wall" normal-texture-repeat="2 2"></a-box>
@@ -216,6 +214,7 @@ function galleryShortCode()
 
       <a-box static-body="" position="-3.48 0.5 -4.49" width="2" height="0" depth="0" src="#bank" ></a-box>
       <!-- end bank links -->
+      <!-- insert images from string -->
       <?= $imgText ?>
 
     <a-sky color="#a9a9a9"></a-sky>

@@ -6,11 +6,11 @@ function galleryOverviewShortCode(){
            <input id="searchbar" placeholder="Zoeken...">
          </div>
          <div class="searchOptions col-sm-4 col-md-2">
-           <select name= "order">
-             <option>a-z</option>
-             <option>z-a</option>
+           <!-- <select name= "order">
+             <option>A-Z</option>
+             <option>Z-A</option>
              <option>populairiteit</option>
-           </select>
+           </select> -->
          </div>
        </div>
        <div id="galleryHolder" class="row">
