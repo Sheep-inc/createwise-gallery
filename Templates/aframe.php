@@ -103,7 +103,7 @@ echo(wp_is_mobile())?'<script src="/wp-content/themes/createwise-gallery/scripts
     <img id="floor" src="/wp-content/themes/createwise-gallery/images/concretefloor3.jpg">
   </a-assets>
   <!-- Camera Entity -->
-  <a-entity id="cameraHolder" width="0" depth="0" position="0 1.6 0">
+  <a-entity id="cameraHolder" width="0" depth="0" position="0 2 0">
   <a-entity id="camera" camera look-controls wasd-controls="acceleration: 300" kinematic-body></a-entity>
   </a-entity>
     <a-box
