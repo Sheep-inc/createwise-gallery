@@ -7,12 +7,6 @@ function initJoystick() {
     let d = document.createElement("DIV");
     d.setAttribute("id", "np");
     document.querySelector("body").appendChild(d)
-
-    // create text overlay
-    //var p = document.createElement("p")
-    //p.setAttribute("style", "text-align: center;margin-top:25%;font-size:12px Georgia; opacity:.5;");
-    //p.innerHTML = "Vasthouden en slepen om te verplaatsen"
-    //d.appendChild(p)
 }
 
 var moveData = "";

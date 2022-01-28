@@ -44,7 +44,7 @@ function um_account_content_hook_galeriesTab( $output ){
   ),"ARRAY_A");
   //output;
   ?>
-	<script src="/wp-content/themes/createwise-gallery/scripts/UMCustom.js"></script>
+	<script defer="true" src="/wp-content/themes/createwise-gallery/scripts/UMCustom.js"></script>
   <table>
     <tr>
       <th>#</th>
@@ -111,6 +111,7 @@ function cw_deleteGalleries(){
 	$id=$_GET["id"];
 	global $wpdb;
 	$user= get_current_user_id();
+	//check if gebruiker de eigenaar is van deze galerij
 	if($user == $wpdb->get_var($wpdb->prepare("SELECT gebruikersID from galleries where id=%d"),[$id])){
 		$wpdb->query($wpdb->prepare("DELETE galleries where id=%d",[$id]));
 		$wpdb->query($wpdb->prepare("DELETE gallerycontent where gallery=%d",[$id]));

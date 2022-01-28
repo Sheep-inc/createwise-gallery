@@ -13,7 +13,7 @@ class gallery{
         this.wrapper=elem;
         var search= elem.previousElementSibling;
         this.inputs["search"]=search.querySelector("#searchbar")
-        this.inputs["orderSelec"]=search.querySelector("select[name='order']")
+        // this.inputs["orderSelec"]=search.querySelector("select[name='order']")
         this.pagination=elem.nextElementSibling
         var that = this;
         elem.previousElementSibling.addEventListener("change",()=>{
@@ -39,15 +39,6 @@ class gallery{
               </div>
               </div>
           </div>`
-
-          //   html+=`<div class="card tcg" data-id='${item.ID}'>
-          //   <a href="/galleries/?id=${item.ID}"><img class="card-img-top" src="${item.url}" alt="${item.Name}"></a>`;
-          //   html+='<span class="sc-card-badge">'+item.views+'</span>';
-          //   html+=`<div class="card-body">
-          //     <p class="card-title text-center">${item.Name.replaceAll("\\","")}</p>
-          //   </div>
-          // </div>`;
-
         })
         html=html==""?"no galleries found":html
         return html;
@@ -82,7 +73,7 @@ class gallery{
 
     _updateGallery(that){
         that.settings.search= that.inputs["search"].value;
-        that.settings.ordertype=that.inputs["orderSelec"].options[that.inputs["orderSelec"].selectedIndex].value;
+        // that.settings.ordertype=that.inputs["orderSelec"].options[that.inputs["orderSelec"].selectedIndex].value;
         that.settings.start=0;
         that._loadmore(1);
     }
